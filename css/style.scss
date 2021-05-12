@@ -1,0 +1,682 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+//  ПЕРЕМЕННЫЕ
+// цвета
+$orange: #ff9c00;
+$grayDark: #535352;
+$graylight: #f4f4f4;
+$gray: #e4e4e4;
+$greenLight: #309b93;
+$green: #0c7b72;
+
+// max-width
+$maxW: 1440px;
+
+// отступы
+$indent15-5: calc(5px + (15 - 5) * ((100vw - 320px) / (1920 - 320)));
+$indent20-0: calc(0px + (20 - 0) * ((100vw - 320px) / (1920 - 320)));
+$indent20-10: calc(10px + (20 - 10) * ((100vw - 320px) / (1920 - 320)));
+$indent30-15: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
+$indent40-15: calc(15px + (40 - 15) * ((100vw - 320px) / (1920 - 320)));
+
+//  font-size (max - 3)
+$fz14-10: calc(10px + (14 - 10) * ((100vw - 320px) / (1920 - 320)));
+$fz14: calc(12px + (14 - 12) * ((100vw - 320px) / (1920 - 320)));
+$fz15: calc(12px + (15 - 12) * ((100vw - 320px) / (1920 - 320)));
+$fz16: calc(13px + (16 - 13) * ((100vw - 320px) / (1920 - 320)));
+$fz17: calc(14px + (17 - 14) * ((100vw - 320px) / (1920 - 320)));
+$fz18: calc(15px + (18 - 15) * ((100vw - 320px) / (1920 - 320)));
+$fz20: calc(17px + (20 - 17) * ((100vw - 320px) / (1920 - 320)));
+$fz25: calc(23px + (25 - 23) * ((100vw - 320px) / (1920 - 320)));
+
+// _________________________________________
+
+// ГЛОБАЛЬНЫЕ НАСТРОЙКИ
+* {
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 0.5px;
+}
+body {
+  margin: 0;
+  background-color: rgb(116, 114, 114);
+}
+
+h1,
+h2,
+h3 {
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+}
+h1,
+h2 {
+  font-size: $fz25;
+  letter-spacing: 1.5px;
+}
+h3 {
+  margin: $indent30-15 0;
+  font-size: $fz20;
+  letter-spacing: 1px;
+}
+h4 {
+  margin: 0;
+  font-size: $fz16;
+}
+h5 {
+  margin: 0;
+}
+p {
+  margin: 0;
+}
+button {
+  padding: 0;
+  border: none;
+  outline: none;
+}
+input {
+  border-radius: 5px;
+  text-align: center;
+  font-size: $fz14;
+  padding: 3px;
+  outline: none;
+  border: none;
+  box-shadow: inset 4px 0 6px rgba(63, 63, 63, 0.322), inset -4px 0 6px rgba(63, 63, 63, 0.322);
+  margin: 0 0 5px 0;
+}
+textarea {
+  border-radius: 5px;
+  resize: none;
+  text-align: center;
+  font-size: $fz14;
+  padding: 3px;
+  outline: none;
+  box-shadow: inset 4px 0 6px rgba(63, 63, 63, 0.322), inset -4px 0 6px rgba(63, 63, 63, 0.322);
+  margin: 0 0 5px 0;
+}
+.container {
+  max-width: 1920px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+// _________________________________________
+
+// ------------------HEADER-----------------------
+.header {
+  width: 100%;
+  &__top {
+    padding: $indent20-10;
+  }
+  &__middle {
+    background-image: url(../img/bg/bg-1.jpg);
+    background-size: 100% auto;
+    & .header-middle {
+      box-sizing: border-box;
+      padding: $indent20-10;
+      background-color: rgba(255, 255, 255, 0.808);
+      &__content {
+        max-width: $maxW;
+        margin: 0 auto;
+        box-sizing: border-box;
+        padding: $indent20-0;
+        display: grid;
+        grid-template-columns: 1fr 5px 1fr;
+        @media (max-width: 550px) {
+          display: block;
+        }
+      }
+    }
+  }
+  &__buttom {
+    background: $orange;
+    box-sizing: border-box;
+    padding: $indent20-10;
+  }
+}
+
+.header-buttom {
+  &__content {
+    max-width: $maxW;
+    box-sizing: border-box;
+    padding: 20px;
+    border: 1px solid white;
+    margin: 0 auto;
+    text-align: center;
+    & p {
+      font-size: $fz18;
+    }
+  }
+}
+
+.logo-partners {
+  margin: auto 0;
+  &__partners {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 30px $indent30-15;
+    background: url(../img/bg/gears.svg) no-repeat;
+    background-size: auto 100%;
+
+    & img {
+      width: 100%;
+    }
+  }
+}
+
+// форма заявки на консультацию
+.form-consult {
+  box-sizing: border-box;
+  padding: $indent30-15 $indent40-15;
+  max-width: calc(380px + (420 - 380) * ((100vw - 320px) / (1920 - 320)));
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+
+  &__body {
+    background: rgba(27, 27, 27, 0.753);
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 0 20px 0;
+    & hr {
+      border-color: rgba(255, 255, 255, 0.301);
+    }
+  }
+  & p {
+    margin: 0 0 20px 0;
+  }
+
+  &__container {
+    &_input {
+      display: flex;
+      flex-direction: column;
+      margin: 0 0 15px 0;
+    }
+
+    &_button {
+      width: 100%;
+      margin: 0 0 15px 0;
+    }
+  }
+}
+
+//--------------------------------------------------
+
+// --------------------CONTENT-----------------------
+.content {
+  &__advantages {
+    max-width: $maxW;
+    margin: 0 auto;
+    border-bottom: 2px solid $greenLight;
+    box-sizing: border-box;
+    padding: $indent40-15;
+  }
+
+  &__work-with-us {
+    max-width: $maxW;
+    margin: 0 auto;
+    padding: 0 $indent30-15 $indent30-15 $indent30-15;
+  }
+
+  &__discounts {
+    background-image: url(https://static3.depositphotos.com/1001546/152/i/950/depositphotos_1527462-stock-photo-russian-money-thousands-of-rubles.jpg);
+  }
+
+  &__price {
+    max-width: $maxW;
+    margin: 0 auto;
+  }
+
+  &__reviews {
+    background-image: url(https://i.topinfoweb.com/img/ekonomika/onlajn-biznes-est-li-realnie-dengi-v-internete.jpg);
+  }
+
+  &__working-process {
+    max-width: $maxW;
+    margin: 0 auto;
+  }
+}
+.advantages {
+  color: $grayDark;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  font-size: $fz15;
+  &__item {
+    padding: 0 10px;
+    margin: 0 auto;
+    max-width: 150px;
+    flex-direction: column;
+    text-align: center;
+    & img {
+      margin: 0 auto 15px auto;
+    }
+  }
+}
+.work-with-us {
+  color: $grayDark;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  @media (max-width: 736px) {
+    display: block;
+  }
+  & img {
+    width: 100%;
+  }
+  & .box-content {
+    &__item {
+      display: flex;
+      flex-direction: row;
+      box-sizing: border-box;
+      padding: 10px;
+      margin: auto 0;
+      & img {
+        margin: auto 0;
+        max-width: 100px;
+        width: 100%;
+        padding: 0 10px;
+      }
+    }
+    &__item-text {
+      margin: auto 0;
+      & p {
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+.discounts {
+  padding: $indent20-10;
+  background-color: rgba(3, 81, 95, 0.801);
+  &__content {
+    margin: 0 auto;
+    max-width: 700px;
+    text-align: center;
+    & .content-order {
+      border-top: 2px solid rgba(255, 255, 255, 0.418);
+      &__form {
+        padding: 20px;
+        margin: 0 auto;
+        & input {
+          width: 170px;
+          margin: 5px 20px;
+        }
+        & button {
+          width: 170px;
+          margin: 5px 20px;
+        }
+      }
+    }
+  }
+}
+.price {
+  & .table {
+    margin: 0 auto $indent20-10 auto;
+    border-spacing: 0;
+
+    &__title {
+      & .lightGreen {
+        background-color: $greenLight;
+      }
+      & .green {
+        background-color: $green;
+      }
+      & .orange {
+        background-color: $orange;
+      }
+      & th {
+        word-break: break-all;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        padding: 5px;
+        color: #fff;
+        font-size: $fz14-10;
+        text-transform: uppercase;
+      }
+    }
+    & tr {
+      & td {
+        word-break: break-all;
+        border: 1px solid #d9dad9;
+        color: $grayDark;
+        font-size: $fz14-10;
+        padding: 3px calc(4px + (8 - 4) * ((100vw - 320px) / (1920 - 320)));
+        background-color: $graylight;
+        text-align: center;
+      }
+    }
+    & .list {
+      text-align: left;
+    }
+    & .gray {
+      background-color: $gray;
+    }
+    & .bold {
+      font-weight: 900;
+      padding: $indent15-5;
+      &__top {
+        font-size: calc(10px + (12 - 10) * ((100vw - 320px) / (1920 - 320)));
+      }
+      &__bottom {
+        font-size: calc(12px + (16 - 12) * ((100vw - 320px) / (1920 - 320)));
+      }
+    }
+
+    &__order {
+      & th {
+        padding: $indent15-5 5px;
+        & button {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+.reviews {
+  background-color: rgba(255, 255, 255, 0.568);
+  padding: $indent20-10;
+}
+
+.carousel {
+  max-width: 1000px;
+  margin: 0 auto;
+  color: #fff;
+  &__carousel-items {
+    margin-bottom: 20px;
+  }
+  &__carousel-inner {
+    text-align: center;
+  }
+  & p {
+    font-size: $fz15;
+  }
+  & h5 {
+    margin-bottom: 20px;
+  }
+  & .carousel-items {
+    display: grid;
+    grid-template-columns: 70px 70px 1fr 70px 70px;
+    grid-template-rows: 30px 1fr 30px 10px 30px 1fr 30px;
+    &__carousel-item-1 {
+      grid-area: 1/1/3/3;
+      z-index: 10;
+      img {
+        width: 130px;
+        height: 130px;
+        border-radius: 80px;
+        border: 3px solid $green;
+      }
+    }
+    &__carousel-item-2 {
+      padding: 20px 20px 20px 80px;
+      box-sizing: border-box;
+      background: $green;
+      grid-area: 2/2/4/6;
+      & .item-2-top {
+        display: grid;
+        grid-template-columns: 1fr minmax(40px, 60px);
+        @media (max-width: 380px) {
+          grid-template-columns: 1fr;
+        }
+      }
+      & .double-quote-1 {
+        padding-left: $indent20-10;
+        @media (max-width: 380px) {
+          display: none;
+        }
+      }
+    }
+    &__carousel-item-3 {
+      padding: 20px 80px 20px 20px;
+      box-sizing: border-box;
+      grid-area: 6/1/8/5;
+      background: $greenLight;
+      & .item-3-top {
+        display: grid;
+        grid-template-columns: minmax(40px, 60px) 1fr;
+        @media (max-width: 380px) {
+          grid-template-columns: 1fr;
+        }
+      }
+      & .double-quote-2 {
+        transform: scale(-1, 1);
+        padding-left: $indent20-10;
+        @media (max-width: 380px) {
+          display: none;
+        }
+      }
+    }
+    &__carousel-item-4 {
+      grid-area: 5/4/7/6;
+      img {
+        width: 130px;
+        height: 130px;
+        border-radius: 80px;
+        border: 3px solid $greenLight;
+      }
+    }
+  }
+  & .carousel-inner {
+    width: 100vh;
+    justify-content: end;
+    justify-self: end;
+    height: 1vh;
+    grid-auto-flow: row;
+    & I {
+      color: $green;
+      &:hover {
+        color: $greenLight;
+      }
+      &:active {
+        color: $orange;
+      }
+    }
+  }
+}
+
+.working-process {
+  &__content {
+    padding: 0 $indent20-10;
+  }
+  &__content-icons {
+    margin: 0 auto;
+    padding: 0 0 calc(20px + (60 - 20) * ((100vw - 320px) / (2000 - 320))) 0;
+  }
+  &__question {
+    margin: 0 auto $indent20-10 auto;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.working-process-icons {
+  display: grid;
+  grid-template-columns: 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr;
+  text-align: center;
+  @media (max-width: 550px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+
+  & .invisible {
+    @media (max-width: 550px) {
+      display: none;
+    }
+  }
+
+  & p {
+    font-size: $fz14-10;
+  }
+  & .fa-size-icons {
+    font-size: calc(40px + (60 - 40) * ((100vw - 320px) / (2000 - 320)));
+  }
+  & .fa-chevron-right {
+    font-size: calc(20px + (50 - 20) * ((100vw - 320px) / (2000 - 320)));
+    color: $grayDark;
+    margin-top: 30px;
+  }
+}
+
+.question-manager {
+  display: flex;
+  @media (max-width: 550px) {
+    display: block;
+  }
+  & p {
+    font-size: $fz20;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 10px 10px 10px;
+  }
+  & .button {
+    width: 220px;
+    margin: 0 10px 10px 10px;
+    background-color: #fff;
+    border: 2px solid $orange;
+    box-shadow: none;
+    &:hover {
+      border-color: $greenLight;
+      background-color: #fff;
+    }
+    &:active {
+      border-color: $green;
+      background-color: #fff;
+    }
+    & a {
+      color: $grayDark;
+      text-decoration: none;
+    }
+  }
+}
+
+//--------------------------------------------------
+
+// --------------------FOOTER-----------------------
+.footer {
+  color: $grayDark;
+  &__top {
+    border-top: 1px solid #f0f0f0;
+    box-sizing: border-box;
+    padding: $indent20-10;
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+  &__bottom {
+    border-top: 2px solid #f0f0f0;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 10px 0 30px 0;
+    &.developed {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      font-size: $fz15;
+      & p {
+        margin: auto 10px auto 0;
+      }
+      & img {
+        width: 80px;
+      }
+    }
+  }
+}
+//--------------------------------------------------
+
+// -------------------КОМПОНЕНТЫ---------------------
+// тайтл
+.title-greenL {
+  color: $greenLight;
+}
+.title-white {
+  color: #fff;
+}
+// кнопка
+.button {
+  font-size: $fz14;
+  text-transform: uppercase;
+  color: white;
+  background-color: $orange;
+  border-radius: 5px;
+  padding: 2px;
+  box-shadow: inset 0 -4px 6px rgba(63, 63, 63, 0.322);
+  &:hover {
+    background-color: $greenLight;
+  }
+  &:active {
+    background-color: $green;
+  }
+}
+
+// обратный звонок (используется в хедаре и футоре)
+.callback {
+  max-width: $maxW;
+  margin: 0 auto;
+  font-size: 13px;
+  display: flex;
+  justify-content: space-between;
+  color: $grayDark;
+  @media (max-width: 550px) {
+    display: block;
+  }
+
+  &__logo {
+    display: flex;
+    @media (max-width: 550px) {
+      margin: 0 0 5px 0;
+    }
+    & p {
+      margin: 0 15px 0 15px;
+    }
+  }
+
+  & .logo {
+    font-size: $fz15;
+    max-width: 400px;
+    display: flex;
+    align-items: center;
+
+    &__img {
+      width: calc(40px + (60 - 40) * ((100vw - 320px) / (2000 - 320)));
+    }
+    &__text {
+      width: 50px;
+    }
+  }
+
+  & .call-order {
+    width: calc(150px + (170 - 150) * ((100vw - 320px) / (1920 - 320)));
+    @media (max-width: 550px) {
+      margin: 0 auto;
+    }
+    &__number {
+      text-align: center;
+      font-size: $fz17;
+      margin: 0 0 calc(0px + (5 - 0) * ((100vw - 320px) / (2000 - 320))) 0;
+      & span {
+        color: $green;
+      }
+    }
+    &__button {
+      width: 100%;
+    }
+  }
+}
+
+.fa-times-circle-o {
+  color: $green;
+}
+.fa-check-circle-o,
+.fa-circle {
+  color: $orange;
+}
+
+//--------------------------------------------------
